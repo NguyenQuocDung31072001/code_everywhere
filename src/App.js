@@ -1,11 +1,12 @@
 import {
   BrowserRouter,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 
-import Home from "./pages/home.jsx"
+import Home from "./pages/home"
+import Write from "./pages/write"
+import Setting from "./pages/settings"
 import Login from "./pages/login.jsx"
 import Signin from "./pages/signin.jsx"
 function App() {
@@ -13,15 +14,11 @@ function App() {
   return (
     <div >
         <BrowserRouter>
-          {/* <Link to="/">login</Link><br/>
-          <Link to="/home">Home</Link><br/>
-          <Link to="/signin">Sign in</Link><br/>
-          <div className="w-[200px] h-1 bg-black">
-
-          </div> */}
           <Routes>
             <Route path="/" element={<Login/>}/>
             <Route path="/home" element={<Home/>}/>
+            <Route path="/home/write" element={<Write/>}/>
+            <Route path="/home/settings" element={<Setting/>}/>
             <Route path="/signin" element={<Signin/>}/>
           </Routes>
         </BrowserRouter>
