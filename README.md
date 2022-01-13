@@ -1,2 +1,2 @@
 Hello !
-https://dung-deploy317.herokuapp.com/
+template: https://dung-deploy317.herokuapp.com/

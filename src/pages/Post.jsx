@@ -14,7 +14,9 @@ export default function Post(){
     const [title,setTitle]=useState()
     const [author,setAuthor]=useState()
     const [story,setStory]=useState()
+
     const URLImg="http://localhost:5000/images/"
+    
     const callBack=(res)=>{
         setPost(res)
         setImage(res.image)

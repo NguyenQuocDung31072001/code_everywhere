@@ -22,7 +22,6 @@ export default function Posts(){
 
             {
                 dataPost && dataPost.map((value,key)=>{
-                    // console.log(1)
                     return(
                         <SingerPost key={key} id={value._id} image={value.image} title={value.title} author={value.author} timePost={value.timePost} story={value.story}/>
                     )

@@ -1,11 +1,9 @@
 import axios from "axios";
 import react, { useState } from "react";
 import {useNavigate} from "react-router-dom"
-function Signin(){
+function Signup(){
     const [username,setUsername]=useState()
     const [password,setPassword]=useState()
-    const [email,setEmail]=useState('')
-    const [role,setRole]=useState('')
     const navigate=useNavigate()
     const signUp=()=>{
         axios({
@@ -15,13 +13,12 @@ function Signin(){
               username: username,
               password: password,
             }
-          })
-            .then((res)=>{
+          }).then((res)=>{
                 if(res.data.message==="sign up success"){
                     navigate('/')
                 }
                 else{
-                    console.log('sign up fail!')
+                    // console.log('sign up fail!')
                     navigate('/signin')
                 }
             })
@@ -39,21 +36,13 @@ function Signin(){
                     <input className="m-3 text-slate-800"
                         onChange={e=>setUsername(e.target.value)} type="text"/>
                 </div>
-                <div className="text-[25px] w-2/3 flex justify-between items-center">
-                    <span>email</span>
-                    <input className="m-3 text-slate-800"
-                        onChange={e=>setEmail(e.target.value)} type="text" />
-                </div>
+                
                 <div className="text-[25px] w-2/3 flex justify-between items-center">
                     <span>Password</span>
                     <input className="m-3 text-slate-800"
                         onChange={e=>setPassword(e.target.value)} type="password" />
                 </div>
-                <div className="text-[25px] w-2/3 flex justify-between items-center">
-                    <span>role</span>
-                    <input className="m-3 text-slate-800"
-                        onChange={e=>setRole(e.target.value)} type="text" />
-                </div>
+                
                 <button 
                     className="bg-slate-500 w-1/4 h-[50px] text-[25px] rounded-xl absolute bottom-2"
                     onClick={signUp}
@@ -64,4 +53,4 @@ function Signin(){
         </div>
     )
 }
-export default Signin
+export default Signup

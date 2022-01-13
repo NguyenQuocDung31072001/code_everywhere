@@ -1,4 +1,4 @@
-import react, { useEffect } from "react";
+import { useEffect } from "react";
 import Top from "../component/Top"
 import HeaderTop from "../component/Header"
 import InfoPages from "../component/InfoPages";

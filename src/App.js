@@ -8,7 +8,7 @@ import Home from "./pages/home"
 import Write from "./pages/write"
 import Setting from "./pages/settings"
 import Login from "./pages/login.jsx"
-import Signin from "./pages/signin.jsx"
+import Signup from "./pages/signin.jsx"
 import Post from "./pages/Post.jsx"
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
             <Route path="/home/post/:id" element={<Post/>}/>
             <Route path="/home/write" element={<Write/>}/>
             <Route path="/home/settings" element={<Setting/>}/>
-            <Route path="/signin" element={<Signin/>}/>
+            <Route path="/signun" element={<Signup/>}/>
           </Routes>
         </BrowserRouter>
     </div>

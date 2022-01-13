@@ -5,11 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 function Login(){
     const [username,setUsername]=useState()
     const [password,setPassword]=useState()
-    const [dataAPI,setDataAPI]=useState()
     const navigate = useNavigate();
 
     const checkAccount=()=>{
-
         axios({
             method: 'post',
             url: 'http://localhost:5000/login',
@@ -17,11 +15,7 @@ function Login(){
                 username:username,
                 password:password
             }
-           
-          })
-            .then(function (response) {
-            //   console.log(response.token)
-            // console.log(response)
+          }).then(function (response) {
               if(response.data.message==='login success'){
                   localStorage.setItem('token',response.data.token)
                   console.log('role',response.data.role)
@@ -49,7 +43,7 @@ function Login(){
                 </div>
                 <div className="text-[25px] absolute bottom-[80px]">
                     <span>Don't have account?</span>
-                    <Link to="/signin">Sign in</Link>
+                    <Link to="/signup">Sign up</Link>
                 </div>
                 <button 
                     className="bg-slate-500 w-1/4 h-[50px] text-[25px] rounded-xl absolute bottom-2"
