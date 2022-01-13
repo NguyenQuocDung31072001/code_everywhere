@@ -13,7 +13,7 @@ export default function Top(){
                 <Link to="">About</Link>
                 <Link to="">Contact</Link>
                 <Link to="/home/write">Write</Link>
-                <Link to="">Logout</Link>
+                <Link to="/home/logout">Logout</Link>
             </div>
             <div className="min-w-[70px] flex justify-between items-center mr-[100px]">
                 <Link to="/home/settings">
@@ -21,7 +21,7 @@ export default function Top(){
                          src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" />
                     
                 </Link>
-                <i class="fas fa-search"></i>
+                <i className="fas fa-search"></i>
             </div>
         </div>
     )

@@ -7,26 +7,28 @@ function Login(){
     const [password,setPassword]=useState()
     const [dataAPI,setDataAPI]=useState()
     const navigate = useNavigate();
-    useEffect(()=>{
+
+    const checkAccount=()=>{
+
         axios({
-            method: 'get',
-            url: 'http://localhost:5000/',
+            method: 'post',
+            url: 'http://localhost:5000/login',
+            data:{
+                username:username,
+                password:password
+            }
            
           })
             .then(function (response) {
-              setDataAPI(response.data)
+            //   console.log(response.token)
+            // console.log(response)
+              if(response.data.message==='login success'){
+                  localStorage.setItem('token',response.data.token)
+                  console.log('role',response.data.role)
+                  navigate('/home')
+              }
               
             });
-    },[])
-    const checkAccount=()=>{
-        
-        const lengthOfDataAPI=dataAPI.length
-        for(let i=0;i<lengthOfDataAPI;i++){
-
-            if(dataAPI[i].username===username && dataAPI[i].password===password){
-                navigate('/home')
-            }
-        }
     }
     return(
         <div className="w-screen h-screen flex items-centre bg-slate-200">
