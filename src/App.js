@@ -3,12 +3,11 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-
 import Home from "./pages/home"
 import Write from "./pages/write"
 import Setting from "./pages/settings"
 import Login from "./pages/login.jsx"
-import Signup from "./pages/signin.jsx"
+import Signup from "./pages/signup.jsx"
 import Post from "./pages/Post.jsx"
 function App() {
 
@@ -21,7 +20,7 @@ function App() {
             <Route path="/home/post/:id" element={<Post/>}/>
             <Route path="/home/write" element={<Write/>}/>
             <Route path="/home/settings" element={<Setting/>}/>
-            <Route path="/signun" element={<Signup/>}/>
+            <Route path="/signup" element={<Signup/>}/>
           </Routes>
         </BrowserRouter>
     </div>
